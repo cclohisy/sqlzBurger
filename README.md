@@ -1,2 +1,2 @@
-# sqlzBurger
-redo burger app using sequelize
+# burger
+app that allows user to add and devour burgers

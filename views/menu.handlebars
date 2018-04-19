@@ -1,0 +1,52 @@
+<div class="jumbotron jumbotron-fluid text-center">
+    <h1 class="display-4">BURGER BINGE</h1>
+    <h2>What burger are you in the mood for? </h2>
+
+</div>
+{{!--
+<div class="text-center">
+    <img src="https://media.giphy.com/media/l0EtM8MnNvB5O6C1q/giphy.gif" class="img-fluid" alt="Burger Gif">
+</div> --}} {{!-- 2 cards for results? --}}
+<div class="row">
+    <div class="card col-md-12 mb-4">
+        <div class="card-body">
+            <h2 class="card-title">Time to Devour...</h2>
+            {{#each burgerObj.burgers}}
+            <p class="card-text">{{id}}. {{burger_name}}
+                <button class=" btn btn-dark eat p-1 m-2" id="{{id}}" data-devoured="{{devoured}}">
+                    Eat Me</button>
+            </p>
+            {{/each}}
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    {{!-- add a burger form --}}
+    <form class="mt-4 mb-4 mx-auto text-center" id="addBurger">
+        <h2>Don't see anything you like? Add a burger! </h2>
+
+        <div class="form-group">
+            <label>Burger Choice:</label>
+            <input type="text" id="newBurger" name="burger">
+        </div>
+        <button class="btn" type="submit">Add Burger</button>
+    </form>
+</div>
+{{!-- customer area --}}
+<div class="row">
+    <h2>Who's Eatin' </h2>
+</div>
+<div class="row">
+    {{#each customerObj.customers}}
+    <div class="card col-md-3 mb-4">
+        <div class="card-body">
+            <h2 class="card-title">{{id}}. {{name}}</h2>
+
+            <p class="card-text">{{id}}. {{name}}
+            </p>
+
+        </div>
+    </div>
+    {{/each}}
+</div>

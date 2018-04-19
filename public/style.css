@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(201, 178, 117);
+    color: black
+}
+.jumbotron{
+    background-image: url("http://backgroundcheckall.com/wp-content/uploads/2017/12/burger-background-1.jpg");
+    color:black;
+    font-family: 'Luckiest Guy', cursive
+}
+
+h2{
+    font-family: 'Luckiest Guy', cursive;
+    color: black
+}
+
+label{
+    color: black;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5em
+
+}
+.card-text{
+    font-family: 'Roboto Condensed', sans-serif;
+  
+}
+/* fonts */
+/* font-family: 'Luckiest Guy', cursive;
+font-family: 'Alegreya Sans SC', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Roboto', sans-serif; */
