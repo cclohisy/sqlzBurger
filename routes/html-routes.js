@@ -28,7 +28,7 @@ module.exports = function (app) {
 
             // res.render("menu", burgerObj)
             db.Customer.findAll({
-                include: [db.burgers],
+                include: [db.burger]
             }).then(function (data) {
                 console.log("cust data", data)
                 var customerObj = {
@@ -38,7 +38,9 @@ module.exports = function (app) {
                    burgerObj,
                    customerObj
                 }
-                console.log("render Object: ",renderObj)
+                console.log(renderObj)
+                console.log(renderObj.customerObj.customers)
+
                 res.render("menu", renderObj)
             })
         })
