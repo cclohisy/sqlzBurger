@@ -12,7 +12,9 @@ module.exports = function (sequelize, DataType) {
     
     Burger.associate = function (models) {
         // associations can be defined here
-        Burger.hasMany(models.Customer, {})
+        Burger.belongsToMany(models.Customer, { through: "customerBurg"})
+        // Customer.belongsToMany(models.burger, {through: "customerBurg"})
+
     }
  
     return Burger

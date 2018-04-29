@@ -26,30 +26,31 @@ $(function () {
 
     })//closes add burger
 
-    //click handler for eat me button
+    //click handler for eat me button - add corresponding burger id to customer tbl
     $(".eat").on("click", function (event) {
         event.preventDefault()
         console.log("eat me working")
-        var id = $(this).attr("id")
-        var devouredState = $(this).attr("data-devoured")
-        console.log(id)
-        devouredState = true
-        console.log(devouredState)
-        var newState = {
-            devoured: devouredState
+        var customerId = localStorage.getItem("customer_id")
+        console.log("customer id"+ customerId)
+        //dont care about devoured state anymore
+        var burgerId = $(this).attr("burger-id")
+        console.log("burger id: " + burgerId)
+
+        var burger = {
+            burgId : burgerId
         }
 
-        $.ajax("/api/burgers/" + id,
+        $.ajax("/api/customers/" + customerId,
             {
                 type: "PUT",
-                data: newState
+                data: burger
             }
         ).then(function () {
             location.reload()
         })
 
     })
-    //from handler for newCustomer
+    //from handler for newCustomer- send info to DB and store in local storage
     $("#addCustomer").on("submit", function (event) {
         event.preventDefault()
         console.log("new cust on click working")
@@ -72,14 +73,25 @@ $(function () {
                 })
         }
     })
-    $("#userSubmit").on("click",function(event){
+
+    //select exisitng customer info and store in local storage
+    $("#userSubmit").on("click", function (event) {
         event.preventDefault()
+        localStorage.clear()
         console.log("already cust submit working")
-        var customer ={
+        var customer = {
             name: $("#customer").val(),
             id: $("#customer").attr("customerId")
         }
         console.log(customer)
+
+        localStorage.setItem("customer_name",customer.name)
+        localStorage.setItem("customer_id", customer.id)
+
+        $("#customerModal").modal("hide")
+        
+        //needs to route to /menu... in html but not working 
+
     })
 })//closes $function thing
 

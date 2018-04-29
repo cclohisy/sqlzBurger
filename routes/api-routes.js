@@ -2,7 +2,7 @@
 var db = require("../models")
 
 module.exports = function (app) {
-    
+
     // post -- create: add new burger to db, refresh page and display
     app.post("/api/burgers", function (req, res) {
         console.log(req.body)
@@ -19,10 +19,10 @@ module.exports = function (app) {
         console.log(req.params)
         db.burger.update(
             {
-                devoured:   req.body.devoured
+                devoured: req.body.devoured
             },
             {
-                where:      {id: req.params.id }
+                where: { id: req.params.id }
             }).then(function (updatedData) {
 
                 if (updatedData == 0) {
@@ -34,26 +34,41 @@ module.exports = function (app) {
                 }
             })
     })
-    
+
     //add new customer 
-    app.post("/api/customers", function(req,res){
+    app.post("/api/customers", function (req, res) {
         console.log(req.body)
         db.Customer.create(req.body).then(
-            function(newCustomerData){
+            function (newCustomerData) {
                 res.json(newCustomerData)
             }
         )
     })
 
     //get customer data
-    app.get("/api/customers", function(req,res){
+    app.get("/api/customers", function (req, res) {
         console.log(req.body)
-        db.Customer.findAll({}).then(function(data){
+        db.Customer.findAll({}).then(function (data) {
             console.log(data)
         })
     })
 
-    
+    //update customer data to inlude burger id of what burger they ate
+    app.put("/api/customers/:id", function (req, res) {
+        console.log("req params (customer id) " + req.params.id)
+        console.log("req burger id", req.body.burgId)
+        db.Customer.update(
+            {
+                burgerId: req.body.burgId
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+
+            })
+    })
+
 }
 
 //delete -- delete ... not required add later

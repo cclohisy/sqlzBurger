@@ -13,7 +13,7 @@
             <h2 class="card-title">Time to Devour...</h2>
             {{#each burgerObj.burgers}}
             <p class="card-text">{{id}}. {{burger_name}}
-                <button class=" btn btn-dark eat p-1 m-2" id="{{id}}" data-devoured="{{devoured}}">
+                <button class=" btn btn-dark eat p-1 m-2" burger-id="{{id}}" data-devoured="{{devoured}}">
                     Eat Me</button>
             </p>
             {{/each}}
@@ -41,7 +41,7 @@
     {{#each customerObj.customers}}
     <div class="card col-md-3 mb-4">
         <div class="card-body">
-            <h2 class="card-title">{{id}}. {{name}}</h2>
+            <h2 class="card-title">{{name}}</h2>
 
             <p class="card-text">{{burger.burger_name}}
             </p>

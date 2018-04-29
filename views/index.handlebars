@@ -3,48 +3,6 @@
     <h2>What burger are you in the mood for? </h2>
 
 </div>
-{{!--
-<div class="text-center">
-    <img src="https://media.giphy.com/media/l0EtM8MnNvB5O6C1q/giphy.gif" class="img-fluid" alt="Burger Gif">
-</div> --}} {{!-- 2 cards for results? --}} {{!--
-<div class="row">
-    <div class="card col-md-5 mb-4">
-        <div class="card-body">
-            <h2 class="card-title">Time to Devour...</h2>
-            {{#each burgers}}{{#unless devoured}}
-            <p class="card-text">{{id}}. {{burger_name}}
-                <button class=" btn btn-dark eat p-1 m-2" id="{{id}}" data-devoured="{{devoured}}">
-                    Eat Me</button>
-            </p>
-            {{/unless}} {{/each}}
-        </div>
-    </div>
-    <div class="col-md-2">
-
-    </div>
-
-    <div class="card col-md-5 mb-4">
-        <div class="card-body">
-            <h2 class="card-title">You at all these already!</h2>
-            {{#each burgers}} {{#if devoured}}
-            <p class="card-text">
-                {{id}}. {{burger_name}}
-            </p>
-            {{/if}} {{/each}}
-
-        </div>
-    </div>
-</div>
-{{!-- add a burger form --}}
-<form class="mt-4 mb-4 mx-auto text-center" id="addBurger">
-    <h2>Don't see anything you like? Add a burger! </h2>
-
-    <div class="form-group">
-        <label>Burger Choice:</label>
-        <input type="text" id="newBurger" name="burger">
-    </div>
-    <button class="btn" type="submit">Add Burger</button>
-</form> --}}
 
 <!-- modal stuff -->
 <div class="modal" id="customerModal" tabindex="-1" role="dialog">
@@ -53,7 +11,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Welcome to Burger Binge</h5>
-            
+
             </div>
             <!-- modal content -->
             <div class="modal-body">
@@ -65,25 +23,23 @@
                         <select id="exsistingCustomers m-3">
 
                             {{#each customers}}
-                            <option id = "customer" customerId="{{id}}" value = "{{name}}">{{name}}</option>
+                            <option id="customer" customerId="{{id}}" value="{{name}}">{{name}}</option>
                             {{/each}}
 
                         </select>
-                        {{!-- <p>
-                            <a href="/menu/{{id}}" type="submit" class="btn btn-dark m-2">Enter</a>
-                        </p> --}}
-                        <button id="userSubmit" type= "submit" class ="btn btn-dark m-2">Enter</button>
+                        <p>
+                            <a href="/menu" id="userSubmit" type="submit" class="btn">Welcome Back!</a>
+                        </p>
                     </div>
                 </form>
                 <hr class="my-4">
                 <p>New Customer</p>
                 <form class="from-inline text-center" id="addCustomer">
                     <div class="form-group mx-sm-3 mb-2">
-                        <label for="inputPassword2" class="sr-only">Password</label>
                         <input type="text" class="form-control" id="customerName" placeholder="Name">
                     </div>
                     <p>
-                        <a href="/menu" type="submit" class="btn btn-dark mb-2">Enter</a>
+                        <a href="#" id = "addCustomer" type="submit" class="btn btn-dark mb-2">Enter</a>
                     </p>
 
                 </form>
