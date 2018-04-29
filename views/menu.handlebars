@@ -42,9 +42,10 @@
     <div class="card col-md-3 mb-4">
         <div class="card-body">
             <h2 class="card-title">{{name}}</h2>
-
-            <p class="card-text">{{burger.burger_name}}
+            {{#each burgers}}
+            <p class="card-text">{{burger_name}}
             </p>
+            {{/each}}
 
         </div>
     </div>
