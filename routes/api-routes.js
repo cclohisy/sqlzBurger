@@ -54,6 +54,7 @@ module.exports = function (app) {
     })
 
     //update customer data to inlude burger id of what burger they ate
+    //no longer using this w/belongs to many 
     app.put("/api/customers/:id", function (req, res) {
         console.log("req params (customer id) " + req.params.id)
         console.log("req burger id", req.body.burgId)
@@ -69,6 +70,26 @@ module.exports = function (app) {
             })
     })
 
+
+
+    //route to update associations
+    app.put("/api/eat/:id", function (req, res) {
+        db.Customer.addburgers([req.params.id, req.body.burgId])
+    })
+
 }
+
+// UserProject = sequelize.define('user_project', {
+//     role: Sequelize.STRING
+//   });
+
+
+//        Burger.belongsToMany(models.Customer, { through: "customerBurg"})
+
+
+//   Project.create({ id: 11 }).then(function (project) {
+//     user.addProjects([project, 12]);
+//   });
+
 
 //delete -- delete ... not required add later

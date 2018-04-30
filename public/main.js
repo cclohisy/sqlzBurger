@@ -40,7 +40,7 @@ $(function () {
             burgId : burgerId
         }
 
-        $.ajax("/api/customers/" + customerId,
+        $.ajax("/api/eat/" + customerId,
             {
                 type: "PUT",
                 data: burger

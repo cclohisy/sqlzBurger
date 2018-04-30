@@ -67,27 +67,4 @@ module.exports = function (app) {
     })
 }
 
-//db.burger.findAll({
-    //     include: [db.Customer]
-    // }).then(function (data) {
-    //     var tableData = {
-    //         restaurantData: data
-    //     }
-    //     console.log("_______________________________________")
-    //     console.log("joined data", tableData)
-    //     for (var i = 0; i < tableData.restaurantData.length; i++) {
-    //         console.log("_________info for " + i + "__________")
-    //         console.log(tableData.restaurantData[i].dataValues)
-    //         console.log("_______burger name_________________")
-    //         console.log(tableData.restaurantData[i].dataValues.burger_name)
-    //         console.log("_______burger id_________________")
-    //         console.log(tableData.restaurantData[i].dataValues.id)
-    //         console.log("___________customer array(eaten burger)__________________")
-    //         console.log(tableData.restaurantData[i].dataValues.Customers)
-    //         for (var j = 0; j < tableData.restaurantData[i].dataValues.Customers.length; j++) {
-    //             console.log("___________customer id__________________")
-    //             console.log(tableData.restaurantData[i].dataValues.Customers[j].dataValues.id)
-    //             console.log("___________customer name__________________")
-    //             console.log(tableData.restaurantData[i].dataValues.Customers[j].dataValues.name)
-    //             console.log("________burgers customer ate________________________")
-    //             console.log(tableData.restaurantData[i].dataValues.Customers[j].dataValues.customerBurg)
+
